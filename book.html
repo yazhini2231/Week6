@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}Book {{ vehicle.name }}{% endblock %}
+{% block content %}
+<h1>Book {{ vehicle.name }}</h1>
+<p>{{ vehicle.category }} • ₹{{ "%.0f"|format(vehicle.price_per_day) }} per day</p>
+<form method="post" class="form">
+<label>Name<input name="customer_name" required></label>
+<label>Email<input name="email" type="email" required></label>
+<label>Start date<input name="start_date" type="date" required></label>
+<label>End date<input name="end_date" type="date" required></label>
+<p class="note">Payment is simulated for this academic project.</p>
+<button class="button" type="submit">Confirm Booking & Demo Payment</button>
+</form>
+{% endblock %}

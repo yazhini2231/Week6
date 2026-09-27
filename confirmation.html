@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="success">
+<h1>Booking Confirmed ✅</h1>
+<p>Booking ID: <strong>#{{ booking.id }}</strong></p>
+<p>Customer: {{ booking.customer_name }}</p>
+<p>Vehicle: {{ booking.name }}</p>
+<p>Payment: {{ booking.payment_status }}</p>
+<p>Status: {{ booking.tracking_status }}</p>
+<a class="button" href="{{ url_for('tracking', booking_id=booking.id) }}">Track Booking</a>
+<a class="button secondary" href="{{ url_for('index') }}">Back to Vehicles</a>
+</div>
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="hero">
+  <h1>Rent a car with confidence</h1>
+  <p>Browse vehicles, create a booking and track your reservation.</p>
+</section>
+<h2>Available Vehicles</h2>
+<div class="grid">
+{% for v in vehicles %}
+<article class="card">
+  <div class="car">🚘</div>
+  <h3>{{ v.name }}</h3>
+  <p>{{ v.category }} • {{ v.location }}</p>
+  <strong>₹{{ "%.0f"|format(v.price_per_day) }} / day</strong>
+  <a class="button" href="{{ url_for('book', vehicle_id=v.id) }}">Book Now</a>
+</article>
+{% endfor %}
+</div>
+{% endblock %}

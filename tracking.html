@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Booking Tracking</h1>
+<div class="tracking">
+<p><strong>Booking #{{ booking.id }}</strong></p>
+<p>Vehicle: {{ booking.name }}</p>
+<div class="step active">✓ Booking Confirmed</div>
+<div class="step">Vehicle Preparation</div>
+<div class="step">Vehicle Ready</div>
+<div class="step">Rental Active</div>
+</div>
+{% endblock %}
